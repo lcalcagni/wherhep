@@ -21,7 +21,7 @@ def read_from_shower(angle, type_p, number, data):
 def read_from_table(angle, type_p, number, table):
     import pandas as pd
      
-    tablename = 'MissingAngle'+angle+type_p+'_'+number+'.'+table
+    tablename = 'dlearning_shower/data/MissingAngle'+angle+type_p+'_'+number+'.'+table
     df = pd.read_table(tablename, delim_whitespace = True, skiprows = 32, skipfooter = 1, engine = 'python', header = None)
 
 
