@@ -28,7 +28,7 @@ def read_from_table(angle, type_p, number, table, columns):
     df = pd.read_table(tablename, delim_whitespace = True, skiprows = 32, skipfooter = 1, engine = 'python', header = None)
     
     #rename columns
-    df.columns = ['row' ,'depth', 'npcles','min','max','avg','rms']
+    df.columns = ['row', 'depth', 'npcles', 'min', 'max', 'avg', 'rms']
     
     #Selecting the columns and rename
     df = df.iloc[:, columns]
