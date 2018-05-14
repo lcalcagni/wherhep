@@ -1,0 +1,81 @@
+>>>>
+>>>> This is AIRES version 2.8.4a (12/Dec/2006)
+>>>> (Compiled by mjtueros@virtualmint, date: 07/mar/2017) *
+>>>> USER: mjtueros, HOST: virtualmint, DATE: 25/Apr/2017
+>>>>
+
+> 25/Apr/2017 16:35:52. Displaying a summary of the input directives:
+
+>>>>
+>>>>          PARAMETERS AND OPTIONS IN EFFECT.
+>>>>
+>>>> "(D)" indicates that the corresponding default value is being used.
+>>>>
+
+                           Task Name: MissingAngle17.5Proton_737
+
+     RUN CONTROL:
+             Total number of showers:          1
+                     Showers per run:          1
+                    Runs per process:   Infinite
+     (D)            CPU time per run:   Infinite
+
+     FILE NAMES:
+                            Log file: MissingAngle17.5Proton_737.lgf
+                    Binary dump file: MissingAngle17.5Proton_737.idf
+               Compressed data files: NONE
+                Table export file(s): MissingAngle17.5Proton_737.tNNNN
+                 Output summary file: MissingAngle17.5Proton_737.sry    
+
+     BASIC PARAMETERS:
+                                Site: ElNihuil
+                                      (Lat: -35.20 deg. Long:  -69.20 deg.)
+                                Date: 23/Dec/2001
+
+                    Primary particle: Proton
+                      Primary energy: 316.23 PeV
+                Primary zenith angle: From    0.00 deg to   88.00 deg
+           Zenith angle distribution: Sine
+     (D)       Primary azimuth angle: From    0.00 deg to  360.00 deg
+     (D)      Zero azimuth direction: Local magnetic north
+                     Thinning energy: 1.0000E-06 Relative
+     (D)          Injection altitude: 100.00 km (1.2829219E-03 g/cm2)
+     (D)             Ground altitude: 1.4000 km (875.5002 g/cm2)
+           First obs. level altitude: 100.00 km (1.2829219E-03 g/cm2)
+            Last obs. level altitude: 1.4000 km (875.5002 g/cm2)
+          Obs. levels and depth step:        511     1.717 g/cm2
+                   Geomagnetic field: Intensity: 24.779 uT
+     (D)                              I:  -34.97 deg. D:    3.69 deg
+     (D)         Table energy limits: 10.000 MeV to 237.17 PeV
+     (D)         Table radial limits: 50.000 m  to 2.0000 km
+
+     ADDITIONAL PARAMETERS:
+              Individual shower data: Full
+               Cut energy for gammas: 900.00 keV
+                Cut energy for e+ e-: 400.00 keV
+     (D)      Cut energy for mu+ mu-: 10.000 MeV
+     (D)       Cut energy for mesons: 60.000 MeV
+     (D)     Cut energy for nucleons: 120.00 MeV
+         Initial primary propagation: On
+     (D)    Record special primaries: On
+     (D)            Resampling ratio: 10.00000
+              ZHAireS Radio Routines: Off
+     (D)    ZHAires includes Hadrons: Off
+     (D)    Hadronic Mean Free Paths: QGSJET-II
+     (D)            QGSJET-II switch: On
+
+     MISCELLANEOUS:
+     (D)    Seed of random generator: Automatic
+     (D)           Atmospheric model: Extended Linsley's std. atmosphere.       
+> 25/Apr/2017 16:35:53. Starting simulation of first shower.
+> 25/Apr/2017 16:45:09. End of run number 1.
+  CPU time for this run: 9 min 15.44 sec
+> 25/Apr/2017 16:45:09. Task completed.
+  Total number of showers: 1
+> 25/Apr/2017 16:45:09. Writing summary file.
+> 25/Apr/2017 16:45:09. End of processing.
+> 09/May/2018 20:56:01. Beginning of summary processing.
+  Binary dump file successfully read.
+  Writing summary/tss/export file(s).
+  Number of completed showers: 1
+> 09/May/2018 20:56:01. Summary completed.
