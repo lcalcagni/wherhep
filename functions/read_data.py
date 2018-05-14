@@ -1,3 +1,4 @@
+#---------------------------------------------------------------------------------
 #Function read_from_shower: Read data from shower. 
 def read_from_shower(angle, type_p, number, data):
     filename = 'dlearning_shower/data/MissingAngle'+angle+type_p+'_'+number+'.lgf'
@@ -16,14 +17,20 @@ def read_from_shower(angle, type_p, number, data):
           return prim_egy
  
 
-
-#Function read_from_table: Read table and extract.         
-def read_from_table(angle, type_p, number, table):
+#---------------------------------------------------------------------------------
+#Function read_from_table: Read table and extract selected columns.         
+def read_from_table(angle, type_p, number, table, columns):
     import pandas as pd
      
     tablename = 'dlearning_shower/data/MissingAngle'+angle+type_p+'_'+number+'.'+table
     df = pd.read_table(tablename, delim_whitespace = True, skiprows = 32, skipfooter = 1, engine = 'python', header = None)
+    
+    #rename columns
+    df.columns = ['row' ,'depth', 'npcles','min','max','avg','rms']
+    
+    #Selecting the columns and rename
+    df = df.iloc[:, columns]
 
-
+return df
  
    
