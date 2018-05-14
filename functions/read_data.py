@@ -1,5 +1,6 @@
 #---------------------------------------------------------------------------------
-#Function read_from_shower: Read data from shower. 
+#Function read_from_shower: Read data from shower.
+#angle, type_p, number, data are strings.
 def read_from_shower(angle, type_p, number, data):
     filename = 'dlearning_shower/data/MissingAngle'+angle+type_p+'_'+number+'.lgf'
     file = open(filename, 'r')
@@ -18,7 +19,8 @@ def read_from_shower(angle, type_p, number, data):
  
 
 #---------------------------------------------------------------------------------
-#Function read_from_table: Read table and extract selected columns.         
+#Function read_from_table: Read table and extract selected columns. 
+#angle, type_p, number, table are strings. columns is an array.
 def read_from_table(angle, type_p, number, table, columns):
     import pandas as pd
      
