@@ -14,7 +14,9 @@ def read_from_shower(angle, type_p, number, data):
           prim_egy = line.split(':')[-1].strip()
           prim_egy = prim_egy.replace(' ','')
           return prim_egy
-        
+ 
+
+
 #Function read_from_table: Read table and extract.         
 def read_from_table(angle, type_p, number, table):
      
