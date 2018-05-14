@@ -2,7 +2,6 @@ def read_from_shower(angle, type, number, data):
   
   file = open('dlearning_shower/data/MissingAngle'+angle+type+'_'+number+'.lgf', 'r')
 
-  global prim_type
   for line in file:
     
     if  (data == 'Primary particle' and data in line):
