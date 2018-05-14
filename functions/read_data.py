@@ -33,6 +33,6 @@ def read_from_table(angle, type_p, number, table, columns):
     #Selecting the columns and rename
     df = df.iloc[:, columns]
 
-return df
+    return df
  
    
