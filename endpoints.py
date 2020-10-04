@@ -14,11 +14,12 @@ def get_papers(category, date):
     while True:
         try:
             response = requests.get(url)
-            print("fetching...", url)
+            logger.debug(f" ⚙ fetching... {url}")
+            papers = response.text
             if response.status_code == 503:
                 pattern = "Retry after (.*?) seconds"
                 seconds_wait = int(re.search(pattern, response.text).group(1))
-                print(f"Got 503. Retrying after {seconds_wait} seconds")
+                logger.debug(f"    💤 Got 503. Retrying after {seconds_wait} seconds")
                 time.sleep(seconds_wait)
                 continue
         except:
