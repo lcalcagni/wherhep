@@ -10,4 +10,4 @@ filename = '.output.json'
 data = [json.loads(line) for line in open(filename, 'r')]
 helpers.bulk(es, data, index='title', doc_type='HEP_papers')
 
-indices=es.indices.get_alias().keys()
+indices = es.indices.get_alias().keys()
