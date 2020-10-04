@@ -16,6 +16,7 @@ def get_papers(category, date):
             response = requests.get(url)
             logger.debug(f" ⚙ fetching... {url}")
             papers = response.text
+            print(papers)
             if response.status_code == 503:
                 pattern = "Retry after (.*?) seconds"
                 seconds_wait = int(re.search(pattern, response.text).group(1))

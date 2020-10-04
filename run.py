@@ -1,4 +1,21 @@
-import config
-from endpoints import *
+import getopt, sys
+from time import process_time
 
-get_papers(config.arxiv_category, config.arxiv_date)
+from log import logger
+from get_data import *
+
+if __name__ == "__main__":
+    try:
+        shortops, args = getopt.getopt(sys.argv[1:]," ")
+    except getopt.error as e:
+        print(e)
+        sys.exit()
+    
+    for arg in args:
+        if arg == "arxiv":
+            tic = process_time()
+            logger.info("🚀 Getting ArXiv data ...")
+            get_arxiv_data()
+            toc = process_time()
+            elapsed_time = toc-tic
+            logger.info(f"⏲ Elapsed time= {elapsed_time}")
