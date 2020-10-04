@@ -14,8 +14,8 @@ if __name__ == "__main__":
     for arg in args:
         if arg == "arxiv":
             tic = process_time()
-            logger.info("🚀 Getting ArXiv data ...")
+            logger.info("🚀  Getting ArXiv data ...")
             get_arxiv_data()
             toc = process_time()
             elapsed_time = toc-tic
-            logger.info(f"⏲ Elapsed time= {elapsed_time}")
+            logger.info(f"⏲  Elapsed time= {elapsed_time}")
