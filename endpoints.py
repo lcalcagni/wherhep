@@ -1,4 +1,4 @@
-from config import *
+import settings
 import requests
 import json
 import re
@@ -6,13 +6,12 @@ import time
 from log import logger
 
 
-def get_papers(category, date, token):
+def get_arxiv_papers(category, date, token):
     base_url = 'http://export.arxiv.org/oai2?verb=ListRecords&'
     url = (base_url +
            f"from={date[0]}&until={date[1]}&" +
            f"metadataPrefix=arXiv&set={category}")
     if token:
-        print("there is token")
         url = base_url + f"resumptionToken={token}"   
     try:
         response = requests.get(url)
@@ -24,4 +23,34 @@ def get_papers(category, date, token):
             time.sleep(seconds_wait)
     except Exception as e:
         print(e)
+        
+    return response
+
+
+def get_macademic_papers_title(title):
+    headers = {
+        'Ocp-Apim-Subscription-Key': f"{settings.MACADEMIC_KEY}",
+        'Content-Type': 'application/x-www-form-urlencoded'
+    }
+    query = "expr=" + "&".join((f"Ti='{title}'",f"count=1",f"attributes={','.join(settings.papers_attributes)}"))
+
+    try:
+        response = requests.post(settings.MACADEMIC, data=query.encode("utf-8"), headers=headers)   
+        response = response.json()
+    except:
+        pass
+                     
+    return response
+
+
+def get_macademic_papers_author(author):
+    headers = {
+        'Ocp-Apim-Subscription-Key': f"{settings.MACADEMIC_KEY}",
+        'Content-Type': 'application/x-www-form-urlencoded'
+    }
+    query = "expr=" + "&".join((f"AuN='{author}'",f"count=1",f"attributes={','.join(settings.papers_attributes)}"))
+
+    response = requests.post(settings.MACADEMIC, data=query.encode("utf-8"), headers=headers)   
+    response = response.json()    
+
     return response
